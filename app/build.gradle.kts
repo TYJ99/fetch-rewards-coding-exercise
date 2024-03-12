@@ -56,10 +56,18 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.10"
     }
+
     packaging {
 //        resources {
 //            excludes += "/META-INF/{AL2.0,LGPL2.1}"
 //        }
+        resources.excludes.addAll(
+            listOf(
+                "META-INF/LICENSE.md",
+                "META-INF/LICENSE-notice.md",
+                // other conflicting META-INF bits
+            )
+        )
     }
 
 
@@ -86,16 +94,16 @@ dependencies {
     implementation ("androidx.compose.material:material:1.7.0-alpha04")
     implementation ("androidx.compose.material:material-icons-extended")
 
-    implementation ("com.google.accompanist:accompanist-permissions:0.30.0")
+    implementation ("com.google.accompanist:accompanist-permissions:0.34.0")
 
     // Coroutine
-    val coroutinesVersion: String = "1.7.3"
+    val coroutinesVersion: String = "1.8.0"
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion")
 
     //Dagger - Hilt
-    implementation("com.google.dagger:hilt-android:2.50")
-    kapt("com.google.dagger:hilt-android-compiler:2.50")
+    implementation("com.google.dagger:hilt-android:2.51")
+    kapt("com.google.dagger:hilt-android-compiler:2.51")
     kapt ("androidx.hilt:hilt-compiler:1.2.0")
     implementation ("androidx.hilt:hilt-navigation-compose:1.2.0")
 
@@ -105,8 +113,8 @@ dependencies {
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
     implementation ("com.squareup.retrofit2:converter-moshi:2.9.0")
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation ("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.3")
-    implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0")
+    implementation ("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.12")
+    implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0")
 
 
 
@@ -130,22 +138,22 @@ dependencies {
     testImplementation ("androidx.test:core:1.5.0")
     testImplementation ("junit:junit:4.13.2")
     testImplementation ("androidx.arch.core:core-testing:2.2.0")
-    testImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
-    testImplementation ("com.google.truth:truth:1.1.3")
-    testImplementation ("com.squareup.okhttp3:mockwebserver:4.9.1")
-    testImplementation ("io.mockk:mockk:1.10.5")
+    testImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.0")
+    testImplementation ("com.google.truth:truth:1.4.2")
+    testImplementation ("com.squareup.okhttp3:mockwebserver:4.12.0")
+    testImplementation ("io.mockk:mockk:1.13.10")
     //debugImplementation ("androidx.compose.ui:ui-test-manifest:1.6.3")
 
     // Instrumentation tests
-    androidTestImplementation ("com.google.dagger:hilt-android-testing:2.37")
-    kaptAndroidTest ("com.google.dagger:hilt-android-compiler:2.50")
+    androidTestImplementation ("com.google.dagger:hilt-android-testing:2.51")
+    kaptAndroidTest ("com.google.dagger:hilt-android-compiler:2.51")
     androidTestImplementation ("junit:junit:4.13.2")
-    androidTestImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
+    androidTestImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.0")
     androidTestImplementation ("androidx.arch.core:core-testing:2.2.0")
-    androidTestImplementation ("com.google.truth:truth:1.1.3")
+    androidTestImplementation ("com.google.truth:truth:1.4.2")
     androidTestImplementation ("androidx.test:core-ktx:1.5.0")
-    androidTestImplementation ("com.squareup.okhttp3:mockwebserver:4.9.1")
-    androidTestImplementation ("io.mockk:mockk-android:1.10.5")
+    androidTestImplementation ("com.squareup.okhttp3:mockwebserver:4.12.0")
+    androidTestImplementation ("io.mockk:mockk-android:1.13.10")
     androidTestImplementation ("androidx.test:runner:1.5.2")
 
     androidTestImplementation ("androidx.test.ext:junit:1.1.5")
@@ -154,6 +162,7 @@ dependencies {
     androidTestImplementation ("androidx.compose.ui:ui-test-junit4")
     debugImplementation ("androidx.compose.ui:ui-tooling")
     debugImplementation ("androidx.compose.ui:ui-test-manifest")
+    implementation(kotlin("script-runtime"))
 }
 
 
