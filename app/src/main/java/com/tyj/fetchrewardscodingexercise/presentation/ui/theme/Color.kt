@@ -1,4 +1,4 @@
-package com.tyj.fetchrewardscodingexercise.ui.theme
+package com.tyj.fetchrewardscodingexercise.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

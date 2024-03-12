@@ -1,4 +1,4 @@
-package com.tyj.fetchrewardscodingexercise.ui.theme
+package com.tyj.fetchrewardscodingexercise.presentation.ui.theme
 
 import android.app.Activity
 import android.os.Build
