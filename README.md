@@ -6,8 +6,6 @@ This list is generated based on the following requirements:
 1. Display all the items grouped by "listId"
 2. Sort the results first by "listId" then by "name" when displaying.
 3. Filter out any items where "name" is blank or null.
-   
-Here is the [APK](./app/release/app-release.apk)  
 
 ## Features
 
